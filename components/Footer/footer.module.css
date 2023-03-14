@@ -19,7 +19,6 @@
 }
 .footer_info {
 	flex-direction: column;
-	gap: var(--space-sm);
 }
 .footer_links a:hover,
 .footer_links a:active {
