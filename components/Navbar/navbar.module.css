@@ -1,0 +1,29 @@
+.navbar,
+.navbar_container,
+.navbar_logo,
+.navbar_links {
+	display: flex;
+	align-items: center;
+}
+.navbar {
+	justify-content: center;
+	height: var(--nav-height);
+	padding: 0rem var(--space-md);
+	background: var(--black);
+	color: var(--white);
+}
+.navbar_container {
+	/* background-color: red; */
+	width: 100%;
+	height: 100%;
+}
+.navbar_logo {
+	flex: 1;
+}
+.navbar_links {
+	height: 100%;
+	flex: 1;
+	/* background: skyblue; */
+	justify-content: flex-end;
+}
+

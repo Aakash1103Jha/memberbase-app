@@ -1,0 +1,31 @@
+.footer,
+.footer * {
+	/* outline: 1px solid red; */
+}
+.footer {
+	padding: var(--space-md);
+}
+.footer_container,
+.footer_info,
+.footer_links {
+	display: flex;
+}
+.footer_container {
+	margin: 0rem auto;
+}
+.footer_info,
+.footer_links {
+	flex: 1;
+}
+.footer_info {
+	flex-direction: column;
+	gap: var(--space-sm);
+}
+.footer_links a:hover,
+.footer_links a:active {
+	text-decoration: underline;
+}
+.footer_link_col {
+	flex: 1;
+}
+

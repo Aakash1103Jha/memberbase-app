@@ -3,6 +3,7 @@
 
 :root {
 	--black: #000;
+	--coal: #222;
 	--white: #fff;
 	--smoke: #ddd;
 	--radius-sm: 0.3rem;
@@ -14,8 +15,12 @@
 	--space-lg: 1.5rem;
 	--space-xl: 2rem;
 	--transition: 0.1s ease-in-out;
-	--max-width: 1300px;
 	--nav-height: 4rem;
+	--min-height: calc(100vh - 20rem);
+	--screen-sm: 320px;
+	--screen-md: 568px;
+	--screen-lg: 768px;
+	--screen-xl: 1279px;
 }
 * {
 	padding: 0;
@@ -34,7 +39,7 @@ i {
 	cursor: pointer;
 }
 body {
-	color: var(--black);
+	color: var(--coal);
 	background: var(--white);
 }
 a,
@@ -91,5 +96,9 @@ li {
 }
 .page_offset {
 	margin-top: var(--nav-height);
+}
+.min_height_wrapper {
+	min-height: var(--min-height);
+	height: 100%;
 }
 
