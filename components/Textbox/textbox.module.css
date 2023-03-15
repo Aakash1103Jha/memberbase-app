@@ -1,0 +1,6 @@
+.textbox {
+	padding: var(--space-sm) var(--space-md);
+	border-radius: var(--radius-md);
+	border: none;
+}
+
