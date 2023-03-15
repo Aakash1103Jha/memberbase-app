@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "APP_ENV=development next dev",
-    "build": "next build",
+    "build": "npm run prisma:generate && next build",
     "stage": "APP_ENV=development next start",
     "start": "development next start",
     "lint": "next lint",
+    "prisma:generate": "npx prisma generate",
     "prisma:sync-changes": "npx prisma db push",
     "prisma:launch-studio": "npx prisma studio"
   },

@@ -1,4 +1,4 @@
-import { PATTERNS } from "@/config/patterns";
+import { PATTERNS } from "@/constants/patterns";
 
 export const validatePassword = (password: string) => {
 	if (!password) return false;
