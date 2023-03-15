@@ -14,11 +14,11 @@ const FOOTER_CONFIG = [
 			},
 			{
 				label: "Resources",
-				url: "/help/resources",
+				url: "/resources",
 			},
 			{
 				label: "Contact",
-				url: "/help/contact",
+				url: "/contact",
 			},
 			{
 				label: "Terms & Conditions",
