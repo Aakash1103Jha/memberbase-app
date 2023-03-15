@@ -6,7 +6,7 @@
 	justify-content: center;
 }
 .login_page {
-	height: var(--min-height);
+	min-height: var(--min-height);
 }
 .login_page_header,
 .login_form {
@@ -20,6 +20,7 @@
 	border: 1px solid var(--black);
 	gap: var(--space-lg);
 	box-shadow: 0px 3px var(--black);
+	margin-top: var(--space-lg);
 }
 .login_form_header {
 	text-align: center;
@@ -37,3 +38,4 @@
 .login_form_cta a {
 	text-decoration: underline;
 }
+

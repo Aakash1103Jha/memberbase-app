@@ -6,9 +6,10 @@
 	align-items: center;
 }
 .hero {
-	min-height: 40rem;
+	min-height: 30rem;
 	height: 100%;
 	padding: var(--space-lg);
+	position: relative;
 }
 .hero > section {
 	gap: var(--space-md);
@@ -27,10 +28,9 @@
 }
 .hero_col_right {
 	flex: 1;
-	/* max-width: 30rem; */
 	background-image: url("../assets/svg/boy-sitting-on-chair-and-reaidng-book.svg");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100% 90%;
+	background-size: 100% 100%;
 }
 
