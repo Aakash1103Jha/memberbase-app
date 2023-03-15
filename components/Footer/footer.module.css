@@ -1,9 +1,5 @@
-.footer,
-.footer * {
-	/* outline: 1px solid red; */
-}
 .footer {
-	padding: var(--space-md);
+	padding: 4rem var(--space-md);
 }
 .footer_container,
 .footer_info,

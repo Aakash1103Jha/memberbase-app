@@ -1,0 +1,7 @@
+.resources_page {
+	padding: var(--space-md);
+	height: 100%;
+}
+.resources_page > section {
+}
+

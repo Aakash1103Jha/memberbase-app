@@ -12,7 +12,6 @@
 }
 .hero > section {
 	gap: var(--space-md);
-	margin: 0rem auto;
 }
 .hero_col_left,
 .hero_col_right {

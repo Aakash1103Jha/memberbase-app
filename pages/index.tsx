@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 import styles from "@/styles/homepage.module.css";
-import { Button } from "@/components";
+import { Button, Subscribe } from "@/components";
 import { PageContainer } from "@/components/Container/PageContainer";
 import Head from "next/head";
 
@@ -23,6 +23,7 @@ const Homepage: NextPage = () => {
 					</PageContainer>
 				</section>
 			</div>
+			<Subscribe />
 		</>
 	);
 };

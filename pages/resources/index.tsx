@@ -2,6 +2,8 @@ import { NextPage } from "next";
 
 import styles from "@/styles/resources.module.css";
 import Head from "next/head";
+import { PageContainer } from "@/components/Container";
+import { Subscribe } from "@/components";
 
 const Resources: NextPage = () => {
 	return (
@@ -10,8 +12,11 @@ const Resources: NextPage = () => {
 				<title>MemberBase - Resources</title>
 			</Head>
 			<div className={`${styles.resources_page}`}>
-				<h1>Resources</h1>
+				<PageContainer>
+					<h1>Resources</h1>
+				</PageContainer>
 			</div>
+			<Subscribe />
 		</>
 	);
 };
