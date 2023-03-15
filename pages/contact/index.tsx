@@ -1,12 +1,18 @@
 import { NextPage } from "next";
 
 import styles from "@/styles/contact.module.css";
+import Head from "next/head";
 
 const Contact: NextPage = () => {
 	return (
-		<div className={`${styles.contact_page}`}>
-			<h1>Contact</h1>
-		</div>
+		<>
+			<Head>
+				<title>MemberBase - Contact</title>
+			</Head>
+			<div className={`${styles.contact_page}`}>
+				<h1>Contact</h1>
+			</div>
+		</>
 	);
 };
 
