@@ -27,6 +27,13 @@
 }
 .hero_col_right {
 	flex: 1;
-	background: var(--black);
+	/* max-width: 30rem; */
+	background-image: url("../assets/svg/boy-sitting-on-chair-and-reaidng-book.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 90%;
+}
+.hero_col_right svg {
+	/* width: inherit; */
 }
 

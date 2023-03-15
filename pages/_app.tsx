@@ -1,11 +1,12 @@
 import type { AppProps } from "next/app";
+import { SessionProvider } from "next-auth/react";
+import Head from "next/head";
 
 import "@/styles/globals.css";
 
 import { AnnouncementBanner, Footer, Navbar } from "@/components";
-import Head from "next/head";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 	const showAnnouncement = true;
 	return (
 		<>
@@ -32,12 +33,16 @@ export default function App({ Component, pageProps }: AppProps) {
 				/>
 				<meta property="twitter:image" content="/public/memberbase.png" />
 			</Head>
-			{showAnnouncement ? <AnnouncementBanner bannerText="A Webflow membership template for resource websites." /> : null}
-			<Navbar />
-			<div className="min_height_wrapper">
-				<Component {...pageProps} />
-			</div>
-			<Footer />
+			<SessionProvider session={session}>
+				{showAnnouncement ? (
+					<AnnouncementBanner bannerText="A Webflow membership template for resource websites." />
+				) : null}
+				<Navbar />
+				<div className="min_height_wrapper">
+					<Component {...pageProps} />
+				</div>
+				<Footer />
+			</SessionProvider>
 		</>
 	);
 }

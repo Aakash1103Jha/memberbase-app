@@ -46,15 +46,15 @@ const FOOTER_CONFIG = [
 			},
 		],
 	},
-	{
-		group: "Admin",
-		children: [
-			{
-				label: "",
-				url: "",
-			},
-		],
-	},
+	// {
+	// 	group: "Admin",
+	// 	children: [
+	// 		{
+	// 			label: "",
+	// 			url: "",
+	// 		},
+	// 	],
+	// },
 ];
 const Footer: FC = () => {
 	return (
