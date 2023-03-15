@@ -13,12 +13,15 @@
 	color: var(--white);
 }
 .navbar_container {
-	/* background-color: red; */
 	width: 100%;
 	height: 100%;
 }
 .navbar_logo {
 	flex: 1;
+	height: 100%;
+}
+.navbar_logo svg {
+	fill: var(--white);
 }
 .navbar_links {
 	height: 100%;

@@ -1,8 +1,11 @@
 import { type FC } from "react";
+import Link from "next/link";
 
 import styles from "./footer.module.css";
+
 import { PageContainer } from "../Container/PageContainer";
-import Link from "next/link";
+
+import LOGO from "@/assets/svg/memberbase.svg";
 
 const FOOTER_CONFIG = [
 	{
@@ -58,7 +61,7 @@ const Footer: FC = () => {
 		<footer className={`${styles.footer}`}>
 			<PageContainer className={`${styles.footer_container}`}>
 				<div className={`${styles.footer_info}`}>
-					<h3>MemberBase</h3>
+					<LOGO className="logo_svg" />
 					<p>Powered by NextJS</p>
 					<p>© 2023 MemberBase. All Rights Reserved</p>
 				</div>

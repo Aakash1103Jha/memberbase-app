@@ -101,4 +101,8 @@ li {
 	min-height: var(--min-height);
 	height: 100%;
 }
+.logo_svg {
+	height: 3rem;
+	width: 10rem;
+}
 

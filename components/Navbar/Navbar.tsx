@@ -2,7 +2,7 @@ import { type FC, ComponentPropsWithRef } from "react";
 
 import styles from "./navbar.module.css";
 
-import LOGO from "@/assets/svg/logo.svg";
+import LOGO from "@/assets/svg/memberbase.svg";
 import { PageContainer } from "../Container/PageContainer";
 
 export interface NavbarProps extends ComponentPropsWithRef<"nav"> {}
@@ -17,7 +17,7 @@ const Navbar: FC<NavbarProps> = (props) => {
 		<nav className={`${styles.navbar} ${className}`} style={style}>
 			<PageContainer className={`${styles.navbar_container}`}>
 				<div className={`${styles.navbar_logo}`}>
-					<h2>MemberBase</h2>
+					<LOGO className="logo_svg" />
 				</div>
 				<ul className={`${styles.navbar_links}`}></ul>
 			</PageContainer>

@@ -20,6 +20,9 @@
 .footer_info {
 	flex-direction: column;
 }
+.footer_info svg {
+	height: 1.5rem;
+}
 .footer_links a:hover,
 .footer_links a:active {
 	text-decoration: underline;
