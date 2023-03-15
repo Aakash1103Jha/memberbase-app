@@ -6,7 +6,7 @@
 	align-items: center;
 }
 .hero {
-	min-height: 30rem;
+	min-height: 40rem;
 	height: 100%;
 	padding: var(--space-lg);
 }
@@ -32,8 +32,5 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 90%;
-}
-.hero_col_right svg {
-	/* width: inherit; */
 }
 

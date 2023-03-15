@@ -1,0 +1,39 @@
+.login_form,
+.login_form_fields,
+.login_page > section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login_page {
+	height: var(--min-height);
+}
+.login_page_header,
+.login_form {
+	max-width: 30rem;
+}
+.login_form {
+	width: 100%;
+	flex-direction: column;
+	padding: var(--space-xl) var(--space-md);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--black);
+	gap: var(--space-lg);
+	box-shadow: 0px 3px var(--black);
+}
+.login_form_header {
+	text-align: center;
+}
+.login_form_fields {
+	flex-direction: column;
+	gap: var(--space-md);
+}
+.login_form_fields input {
+	border: 1px solid var(--coal);
+}
+.login_form_fields button {
+	width: 100%;
+}
+.login_form_cta a {
+	text-decoration: underline;
+}

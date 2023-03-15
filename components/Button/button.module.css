@@ -9,4 +9,8 @@
 	background: var(--coal);
 	border-color: var(--coal);
 }
+.button.button_primary:hover,
+.button.button_primary:active {
+	background: var(--black);
+}
 
