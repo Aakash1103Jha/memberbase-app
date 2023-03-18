@@ -29,9 +29,6 @@
 	flex-direction: column;
 	gap: var(--space-md);
 }
-.login_form_fields input {
-	border: 1px solid var(--coal);
-}
 .login_form_fields button {
 	width: 100%;
 }

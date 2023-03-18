@@ -64,7 +64,9 @@ h3 {
 select:focus,
 select:active,
 input:focus,
-input:active {
+input:active,
+textarea:focus,
+textarea:active {
 	outline: none;
 }
 a {
@@ -90,6 +92,7 @@ li {
 .error {
 	text-align: center;
 	margin: var(--space-sm) 0rem;
+	width: 100%;
 }
 .required {
 	font-weight: 700;

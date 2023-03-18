@@ -7,5 +7,6 @@
 	padding: var(--space-sm) var(--space-md);
 	border-radius: var(--radius-md);
 	border: none;
+	border: 1px solid var(--coal);
 }
 

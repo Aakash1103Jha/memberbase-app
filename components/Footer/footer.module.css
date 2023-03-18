@@ -1,5 +1,5 @@
 .footer {
-	padding: 4rem var(--space-md);
+	padding: var(--space-xl) var(--space-md);
 }
 .footer_container,
 .footer_info,
