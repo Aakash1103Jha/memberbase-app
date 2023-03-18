@@ -1,0 +1,26 @@
+.subscribe_section,
+.subscribe_section > section,
+.subscribe_section_cta {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.subscribe_section {
+	background: var(--black);
+	color: var(--white);
+	height: 20rem;
+}
+.subscribe_section > section {
+	height: 100%;
+	flex-direction: column;
+	text-align: center;
+	gap: var(--space-sm);
+}
+.subscribe_section > section > h3 {
+	max-width: 35rem;
+	margin-bottom: var(--space-lg);
+}
+.subscribe_section_cta {
+	gap: var(--space-sm);
+}
+

@@ -1,0 +1,16 @@
+.button {
+	padding: var(--space-sm) var(--space-lg);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: var(--radius-md);
+}
+.button.button_primary {
+	color: var(--white);
+	background: var(--coal);
+	border-color: var(--coal);
+}
+.button.button_primary:hover,
+.button.button_primary:active {
+	background: var(--black);
+}
+
