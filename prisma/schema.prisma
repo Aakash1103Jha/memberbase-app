@@ -16,3 +16,16 @@ model users {
   password  String
   fullName  String
 }
+
+model books {
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  isbn          String
+  title         String
+  subtitle      String
+  author        String
+  published     String
+  publisher     String
+  pages         Int
+  description   String
+  website       String
+}

@@ -1,2 +1,2 @@
-export * from "./GenericGrid";
+export * from "./GenericList";
 
