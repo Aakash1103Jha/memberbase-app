@@ -49,7 +49,7 @@ const reducer = (state: State, action: Action): State => {
 };
 
 const Contact: NextPage = () => {
-	const [error, setError] = useState<string | undefined>("undefined");
+	const [error, setError] = useState<string | undefined>("");
 	const [state, dispatch] = useReducer(reducer, InitialState);
 
 	const onSubmitContactForm: FormEventHandler<HTMLFormElement> = (e) => {
