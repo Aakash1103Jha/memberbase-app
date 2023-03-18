@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -9,9 +9,12 @@ import styles from "@/styles/login.module.css";
 
 import { PageContainer } from "@/components/Container";
 import { Button, Textbox } from "@/components";
+import { getServerSession } from "next-auth";
+import { OPTIONS } from "../api/auth/[...nextauth]";
 
-const Login: NextPage = () => {
+const Login: NextPage<{ loggedIn: boolean }> = ({ loggedIn }) => {
 	const router = useRouter();
+
 	const [error, setError] = useState<string | undefined>(undefined);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -81,6 +84,21 @@ const Login: NextPage = () => {
 			</div>
 		</>
 	);
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+	const session = await getServerSession(ctx.req, ctx.res, OPTIONS);
+	if (session) {
+		return {
+			redirect: {
+				destination: "/",
+				permanent: false,
+			},
+		};
+	}
+	return {
+		props: {},
+	};
 };
 
 export default Login;
