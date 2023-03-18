@@ -7,6 +7,10 @@
 }
 .register_page {
 	min-height: var(--min-height);
+	background-image: url("../assets/svg/undraw_join_re_w1lh.svg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
 }
 .register_page_header,
 .register_form {
@@ -14,6 +18,7 @@
 }
 .register_form {
 	width: 100%;
+	background: var(--white);
 	flex-direction: column;
 	padding: var(--space-xl) var(--space-md);
 	border-radius: var(--radius-lg);

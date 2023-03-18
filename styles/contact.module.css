@@ -9,12 +9,16 @@
 }
 .contact_page {
 	min-height: var(--min-height);
-	/* height: 100%; */
+	background-image: url("../assets/svg/undraw_contact_us_re_4qqt.svg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
 }
 .contact_page > section {
 	width: fit-content;
 }
 .contact_page_form_container {
+	background: var(--white);
 	border: 1px solid var(--coal);
 	border-radius: var(--radius-md);
 	padding: var(--space-md);
