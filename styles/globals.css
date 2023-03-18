@@ -89,7 +89,7 @@ li {
 }
 .error {
 	text-align: center;
-	margin: var(--space-md) 0rem;
+	margin: var(--space-sm) 0rem;
 }
 .required {
 	font-weight: 700;

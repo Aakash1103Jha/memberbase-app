@@ -1,0 +1,41 @@
+.register_form,
+.register_form_fields,
+.register_page > section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.register_page {
+	min-height: var(--min-height);
+}
+.register_page_header,
+.register_form {
+	max-width: 30rem;
+}
+.register_form {
+	width: 100%;
+	flex-direction: column;
+	padding: var(--space-xl) var(--space-md);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--black);
+	gap: var(--space-lg);
+	box-shadow: 0px 3px var(--black);
+	margin-top: var(--space-lg);
+}
+.register_form_header {
+	text-align: center;
+}
+.register_form_fields {
+	flex-direction: column;
+	gap: var(--space-md);
+}
+.register_form_fields input {
+	border: 1px solid var(--coal);
+}
+.register_form_fields button {
+	width: 100%;
+}
+.register_form_cta a {
+	text-decoration: underline;
+}
+
