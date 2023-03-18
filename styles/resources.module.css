@@ -33,6 +33,10 @@
 	bottom: var(--space-md);
 	right: var(--space-md);
 	text-align: right;
+	background: var(--black);
+	padding: 0.2rem var(--space-sm);
+	color: var(--white);
+	border-radius: 10rem 10rem;
 }
 .resource_card_info {
 	background: var(--smoke);

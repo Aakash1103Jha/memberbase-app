@@ -7,33 +7,29 @@ import { Textbox } from "../Textbox";
 
 const Subscribe: FC = () => {
 	const _emailRef = useRef<HTMLInputElement>(null);
-	const [message, setMessage] = useState("");
 
 	const onSubscribeClicked: FormEventHandler<HTMLFormElement> = async (e) => {
 		e.preventDefault();
 		if (_emailRef.current) {
 			const email = _emailRef.current.value;
-			if (!email) return setMessage("Email is required");
+			if (!email) return alert("Email is required to subscribe!");
 			try {
-				const res = await fetch(`/api/subscribe?user=${email}`);
+				const res = await fetch(`/api/subscribe?email=${email}`, {
+					method: "POST",
+				});
 				const data = await res.json();
 				if (!res.ok) {
 					_emailRef.current.value = "";
-					return setMessage(data);
+					return alert(data);
 				}
+				_emailRef.current.value = "";
+				return alert(data);
 			} catch (error) {
 				console.error(error);
-				return setMessage((error as Error).message);
+				return alert((error as Error).message);
 			}
 		} else return;
 	};
-
-	useEffect(() => {
-		if (message) alert(message);
-		return () => {
-			setMessage("");
-		};
-	}, [message]);
 
 	return (
 		<section className={`${styles.subscribe_section}`}>

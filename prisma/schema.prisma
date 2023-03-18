@@ -29,3 +29,8 @@ model books {
   description   String
   website       String
 }
+
+model subscribers {
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  email         String
+}
