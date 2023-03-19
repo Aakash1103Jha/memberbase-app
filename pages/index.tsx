@@ -18,11 +18,15 @@ const Homepage: NextPage = () => {
 				<section className={`${styles.hero}`}>
 					<PageContainer>
 						<div className={`${styles.hero_col_left}`}>
-							<h1>Access a library of free design resources</h1>
+							<div className={`${styles.glitch_wrapper}`}>
+								<h1 className={`${styles.glitch}`} data-glitch="Access a library of free design resources">
+									Access a library of free design resources
+								</h1>
+							</div>
 							<h2>The best resources and books from around the web, collected and curated for your reading.</h2>
 							<Button label="Get Access Now" onClick={() => router.push("/resources")} />
 						</div>
-						<div className={`${styles.hero_col_right}`}>{/* <HERO_IMAGE /> */}</div>
+						<div className={`${styles.hero_col_right}`}></div>
 					</PageContainer>
 				</section>
 			</div>

@@ -8,7 +8,8 @@
 .subscribe_section {
 	background: var(--black);
 	color: var(--white);
-	height: 20rem;
+	height: 25rem;
+	padding: var(--space-md);
 }
 .subscribe_section > section {
 	height: 100%;
@@ -21,6 +22,7 @@
 	margin-bottom: var(--space-lg);
 }
 .subscribe_section_cta {
+	flex-wrap: wrap;
 	gap: var(--space-sm);
 }
 
