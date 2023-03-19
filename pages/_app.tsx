@@ -17,7 +17,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 					content="The best resources and books from around the web, collected and curated for your reading."
 				/>
 				<meta property="og:type" content="website" />
-				<meta property="og:url" content="https://metatags.io/" />
+				<meta property="og:url" content="https://memberbase-app.vercel.app/" />
 				<meta property="og:title" content="Memberbase" />
 				<meta
 					property="og:description"
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 				/>
 				<meta property="og:image" content="/public/memberbase.png" />
 				<meta property="twitter:card" content="summary_large_image" />
-				<meta property="twitter:url" content="https://metatags.io/" />
+				<meta property="twitter:url" content="https://memberbase-app.vercel.app/" />
 				<meta property="twitter:title" content="Memberbase" />
 				<meta
 					property="twitter:description"
