@@ -6,7 +6,7 @@
     "dev": "APP_ENV=development next dev",
     "build": "npm run prisma:generate && next build",
     "stage": "APP_ENV=development next start",
-    "start": "development next start",
+    "start": "APP_ENV=production next start",
     "lint": "next lint",
     "prisma:generate": "npx prisma generate",
     "prisma:sync-changes": "npx prisma db push",
