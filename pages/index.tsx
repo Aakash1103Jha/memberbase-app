@@ -6,9 +6,14 @@ import styles from "@/styles/homepage.module.css";
 import { Button, Subscribe } from "@/components";
 import { PageContainer } from "@/components/Container/PageContainer";
 import { useRouter } from "next/router";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
+import { sendAnalytics } from "@/lib/sendAnalytics";
 
 const Homepage: NextPage = () => {
 	const router = useRouter();
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	return (
 		<>
 			<Head>
