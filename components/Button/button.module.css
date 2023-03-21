@@ -13,4 +13,14 @@
 .button.button_primary:active {
 	background: var(--black);
 }
+.button.button_outline {
+	color: var(--white);
+	background: transparent;
+	border-color: var(--white);
+}
+.button.button_outline:hover,
+.button.button_outline:active {
+	color: var(--smoke);
+	border-color: var(--smoke);
+}
 
