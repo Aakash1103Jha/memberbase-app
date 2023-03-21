@@ -59,8 +59,6 @@ export const sendAnalytics = async () => {
 		},
 	} satisfies AnalyticsPayload;
 
-	console.log(_payload);
-
 	const res = await fetch("https://analyic-tracing.vercel.app/api/analytics", {
 		method: "POST",
 		body: JSON.stringify(_payload),
