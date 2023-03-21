@@ -10,6 +10,9 @@ import Link from "next/link";
 import { PageContainer } from "@/components/Container";
 import { GenericList, Subscribe } from "@/components";
 import Image from "next/image";
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const ResourceCard = (data: books) => {
 	return (
@@ -36,6 +39,14 @@ const ResourceCard = (data: books) => {
 };
 
 const Resources: NextPage<{ BOOKS: books[] }> = ({ BOOKS }) => {
+	const { status } = useSession();
+	const router = useRouter();
+
+	useEffect(() => {
+		if (status !== "authenticated") router.replace("/");
+		return () => {};
+	}, [status, router]);
+
 	return (
 		<>
 			<Head>

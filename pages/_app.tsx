@@ -5,6 +5,7 @@ import Head from "next/head";
 import "@/styles/globals.css";
 
 import { AnnouncementBanner, Footer, Navbar } from "@/components";
+import CONFIG from "@/config/routes.config.json";
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 	const showAnnouncement = true;
@@ -37,7 +38,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 				{showAnnouncement ? (
 					<AnnouncementBanner bannerText="A Webflow membership template for resource websites." />
 				) : null}
-				<Navbar />
+				<Navbar config={CONFIG.ROUTES} />
 				<div className="min_height_wrapper">
 					<Component {...pageProps} />
 				</div>

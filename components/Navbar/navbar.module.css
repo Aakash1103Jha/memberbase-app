@@ -1,7 +1,9 @@
 .navbar,
 .navbar_container,
 .navbar_logo,
-.navbar_links {
+.navbar_links,
+.navbar_link,
+.navbar_link_item {
 	display: flex;
 	align-items: center;
 }
@@ -26,7 +28,20 @@
 .navbar_links {
 	height: 100%;
 	flex: 1;
-	/* background: skyblue; */
+	gap: var(--space-xl);
 	justify-content: flex-end;
+}
+.navbar_link {
+	height: 100%;
+	justify-content: center;
+}
+.navbar_link_item {
+	color: var(--white);
+	height: var(--nav-height);
+	justify-content: center;
+}
+.navbar_link_item:hover,
+.navbar_link_item:active {
+	color: var(--smoke);
 }
 

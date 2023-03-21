@@ -1,0 +1,14 @@
+{
+    "ROUTES": [
+        {
+            "label": "Home",
+            "url": "/",
+            "isPublic": true
+        },
+        {
+            "label": "Resources",
+            "url": "/resources",
+            "isPublic": false
+        }
+    ]
+}
