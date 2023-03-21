@@ -5,7 +5,10 @@ import Head from "next/head";
 import { useEffect } from "react";
 
 import styles from "@/styles/resource.module.css";
+
 import { PageContainer } from "@/components/Container";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const Resource: NextPage = () => {
 	const router = useRouter();
@@ -17,6 +20,9 @@ const Resource: NextPage = () => {
 		return () => {};
 	}, [status, router]);
 
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	return (
 		<>
 			<Head>

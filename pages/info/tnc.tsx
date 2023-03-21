@@ -1,10 +1,17 @@
 import { NextPage } from "next";
 
-import styles from "@/styles/tnc.module.css";
 import Head from "next/head";
+
+import styles from "@/styles/tnc.module.css";
+
 import { PageContainer } from "@/components/Container";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const TnC: NextPage = () => {
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	return (
 		<>
 			<Head>

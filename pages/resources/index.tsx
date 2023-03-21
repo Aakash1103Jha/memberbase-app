@@ -1,20 +1,25 @@
 import { GetServerSideProps, NextPage } from "next";
-
-import styles from "@/styles/resources.module.css";
+import Image from "next/image";
+import { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { getServerSession } from "next-auth";
 import { OPTIONS } from "../api/auth/[...nextauth]";
 import { books } from "@prisma/client";
 import Link from "next/link";
 
+import styles from "@/styles/resources.module.css";
+
 import { PageContainer } from "@/components/Container";
 import { GenericList, Subscribe } from "@/components";
-import Image from "next/image";
-import { useEffect } from "react";
-import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const ResourceCard = (data: books) => {
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	return (
 		<div className={`${styles.resource_card}`}>
 			<div className={`${styles.resource_cover}`}>
