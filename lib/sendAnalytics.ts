@@ -44,7 +44,7 @@ const identifyBrowser = (agent: string) => {
 };
 
 export const sendAnalytics = async () => {
-	if (Boolean(process.env.ENABLE_ANALYTICS) === false) return;
+	if (process.env.NODE_ENV !== "production") return;
 	const { platform, language, userAgent } = window.navigator;
 	const { host, origin, pathname } = window.location;
 	const _payload = {
@@ -59,6 +59,7 @@ export const sendAnalytics = async () => {
 			pathname,
 		},
 	} satisfies AnalyticsPayload;
+	console.log(_payload);
 
 	const res = await fetch("https://analyic-tracing.vercel.app/api/analytics", {
 		method: "POST",
