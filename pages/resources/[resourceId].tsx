@@ -1,12 +1,21 @@
 import { GetServerSideProps, NextPage } from "next";
+import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import Head from "next/head";
+import { useEffect } from "react";
 
 import styles from "@/styles/resource.module.css";
-import { useRouter } from "next/router";
-import Head from "next/head";
 import { PageContainer } from "@/components/Container";
 
 const Resource: NextPage = () => {
-	const { resourceId } = useRouter().query as { resourceId: string };
+	const router = useRouter();
+	const { resourceId } = router.query as { resourceId: string };
+	const { status } = useSession();
+
+	useEffect(() => {
+		if (status !== "authenticated") router.replace("/");
+		return () => {};
+	}, [status, router]);
 
 	return (
 		<>
