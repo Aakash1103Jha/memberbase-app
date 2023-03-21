@@ -8,6 +8,8 @@ import styles from "@/styles/register.module.css";
 
 import { PageContainer } from "@/components/Container";
 import { Button, Textbox } from "@/components";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const Register: NextPage = () => {
 	const router = useRouter();
@@ -28,6 +30,9 @@ const Register: NextPage = () => {
 		setError("");
 		return setPassword(e.target.value);
 	};
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	const onRegister: FormEventHandler<HTMLFormElement> = async (e) => {
 		e.preventDefault();
 		try {

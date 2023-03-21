@@ -1,10 +1,16 @@
 import { NextPage } from "next";
+import Head from "next/head";
 
 import styles from "@/styles/privacy.module.css";
-import Head from "next/head";
+
 import { PageContainer } from "@/components/Container";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const Privacy: NextPage = () => {
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	return (
 		<>
 			<Head>

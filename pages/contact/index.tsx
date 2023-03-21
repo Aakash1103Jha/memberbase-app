@@ -6,6 +6,8 @@ import styles from "@/styles/contact.module.css";
 
 import { Button, Textbox } from "@/components";
 import { PageContainer } from "@/components/Container";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 enum ACTION_TYPE {
 	UPDATE_EMAIL = "update_email",
@@ -55,7 +57,9 @@ const Contact: NextPage = () => {
 	const onSubmitContactForm: FormEventHandler<HTMLFormElement> = (e) => {
 		e.preventDefault();
 	};
-
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
 	return (
 		<>
 			<Head>

@@ -11,6 +11,8 @@ import { PageContainer } from "@/components/Container";
 import { Button, Textbox } from "@/components";
 import { getServerSession } from "next-auth";
 import { OPTIONS } from "../api/auth/[...nextauth]";
+import { sendAnalytics } from "@/lib/sendAnalytics";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
 
 const Login: NextPage<{ loggedIn: boolean }> = ({ loggedIn }) => {
 	const router = useRouter();
@@ -27,6 +29,11 @@ const Login: NextPage<{ loggedIn: boolean }> = ({ loggedIn }) => {
 		setError("");
 		return setPassword(e.target.value);
 	};
+
+	useEffectOnce(() => {
+		sendAnalytics();
+	});
+
 	const onLogin: FormEventHandler<HTMLFormElement> = async (e) => {
 		e.preventDefault();
 		try {
