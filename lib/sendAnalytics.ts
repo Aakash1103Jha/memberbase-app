@@ -44,7 +44,7 @@ const identifyBrowser = (agent: string) => {
 };
 
 export const sendAnalytics = async () => {
-	if (process.env.APP_ENV !== "production") return;
+	if (process.env.NODE_ENV !== "production") return;
 	const { platform, language, userAgent } = window.navigator;
 	const { host, origin, pathname } = window.location;
 	const _payload = {
