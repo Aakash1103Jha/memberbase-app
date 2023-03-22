@@ -31,7 +31,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 					property="og:description"
 					content="The best resources and books from around the web, collected and curated for your reading."
 				/>
-				<meta property="og:image" content="https://memberbase-app.vercel.app/public/memberbase.png" />
+				<meta property="og:image" content="/memberbase.png" />
 				<meta property="twitter:card" content="summary_large_image" />
 				<meta property="twitter:url" content="https://memberbase-app.vercel.app/" />
 				<meta property="twitter:title" content="Memberbase" />
@@ -39,7 +39,7 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 					property="twitter:description"
 					content="The best resources and books from around the web, collected and curated for your reading."
 				/>
-				<meta property="twitter:image" content="https://memberbase-app.vercel.app/public/memberbase.png" />
+				<meta property="twitter:image" content="/memberbase.png" />
 			</Head>
 			<SessionProvider session={session}>
 				{showAnnouncement ? <AnnouncementBanner bannerText="Great features coming soon! Join the waitlist!" /> : null}
