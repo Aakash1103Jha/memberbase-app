@@ -21,9 +21,8 @@ const NavbarLinkItem = ({ label, url }: Route) => {
 };
 
 const Navbar: FC<NavbarProps> = (props) => {
-	const { status } = useSession();
+	const { status, data } = useSession();
 	const { className, style, ...rest } = props;
-	const { ROUTES } = CONFIG;
 	return (
 		<nav className={`${styles.navbar} ${className}`} style={style}>
 			<PageContainer className={`${styles.navbar_container}`}>
@@ -33,11 +32,15 @@ const Navbar: FC<NavbarProps> = (props) => {
 					</Link>
 				</div>
 				<ul className={`${styles.navbar_links}`}>
-					{ROUTES.filter(
+					{CONFIG.ROUTES.filter(
 						(item) => item.isPublic === true || (item.isPublic === false && status === "authenticated"),
 					).map((item) => (
 						<li className={`${styles.navbar_link}`} key={item.label}>
-							<NavbarLinkItem {...item} />
+							{item.url.includes("profile") ? (
+								<NavbarLinkItem {...{ ...item, url: `${item.url}/${data?.user.id}` }} />
+							) : (
+								<NavbarLinkItem {...item} />
+							)}
 						</li>
 					))}
 					{status === "authenticated" ? (
