@@ -25,4 +25,7 @@
 	flex-wrap: wrap;
 	gap: var(--space-sm);
 }
+.subscribe_section_cta div {
+	flex: 1;
+}
 
