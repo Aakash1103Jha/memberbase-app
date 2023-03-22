@@ -87,6 +87,9 @@ const Register: NextPage = () => {
 								value={password}
 								onChange={onPasswordChange}
 							/>
+							<p className={`${styles.password_hint}`}>
+								Password must contain at least 8 characters, 1 uppercase, 1 numeric and 1 special character
+							</p>
 							{error ? <p className="error">{error}</p> : null}
 							<Button label="Register" />
 						</div>

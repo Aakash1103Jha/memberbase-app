@@ -32,6 +32,8 @@
 .register_form_fields {
 	flex-direction: column;
 	gap: var(--space-md);
+	align-items: center;
+	max-width: 20rem;
 }
 .register_form_fields input {
 	border: 1px solid var(--coal);
@@ -41,5 +43,9 @@
 }
 .register_form_cta a {
 	text-decoration: underline;
+}
+.password_hint {
+	text-align: justify;
+	color: #555;
 }
 

@@ -26,7 +26,7 @@ export const OPTIONS: NextAuthOptions = {
 					);
 				const isPasswordCorrect = await compare(password, _user.password);
 				if (!isPasswordCorrect) throw new Error("Incorrect password");
-				return { ..._user, id: _user.id.toString() };
+				return { ..._user, id: _user.id.toString(), password: "" };
 			},
 		}),
 	],

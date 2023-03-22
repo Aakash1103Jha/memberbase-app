@@ -9,6 +9,11 @@
             "label": "Resources",
             "url": "/resources",
             "isPublic": false
+        },
+        {
+            "label": "Profile",
+            "url": "/profile",
+            "isPublic": false
         }
     ]
 }
