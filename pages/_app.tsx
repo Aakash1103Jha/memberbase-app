@@ -5,10 +5,17 @@ import Head from "next/head";
 import "@/styles/globals.css";
 
 import { AnnouncementBanner, Footer, Navbar } from "@/components";
-import CONFIG from "@/config/routes.config.json";
+import { useEffectOnce } from "@/hooks/useEffectOnce";
+import { useState } from "react";
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-	const showAnnouncement = true;
+	const [showAnnouncement, setShowAnnouncement] = useState(true);
+	useEffectOnce(() => {
+		const _time = setTimeout(() => {
+			return setShowAnnouncement(false);
+		}, 3000);
+		return () => clearTimeout(_time);
+	});
 	return (
 		<>
 			<Head>
@@ -35,10 +42,8 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
 				<meta property="twitter:image" content="https://memberbase-app.vercel.app/public/memberbase.png" />
 			</Head>
 			<SessionProvider session={session}>
-				{showAnnouncement ? (
-					<AnnouncementBanner bannerText="A Webflow membership template for resource websites." />
-				) : null}
-				<Navbar config={CONFIG.ROUTES} />
+				{showAnnouncement ? <AnnouncementBanner bannerText="Great features coming soon! Join the waitlist!" /> : null}
+				<Navbar />
 				<div className="min_height_wrapper">
 					<Component {...pageProps} />
 				</div>

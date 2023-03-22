@@ -6,13 +6,11 @@ import styles from "./navbar.module.css";
 
 import { Route } from "@/types/Route";
 import LOGO from "@/assets/svg/memberbase.svg";
-
+import CONFIG from "@/config/routes.config.json";
 import { PageContainer } from "../Container/PageContainer";
 import { Button } from "../Button";
 
-export interface NavbarProps extends ComponentPropsWithRef<"nav"> {
-	config: Route[];
-}
+export interface NavbarProps extends ComponentPropsWithRef<"nav"> {}
 
 const NavbarLinkItem = ({ label, url }: Route) => {
 	return (
@@ -24,7 +22,8 @@ const NavbarLinkItem = ({ label, url }: Route) => {
 
 const Navbar: FC<NavbarProps> = (props) => {
 	const { status } = useSession();
-	const { className, config, style, ...rest } = props;
+	const { className, style, ...rest } = props;
+	const { ROUTES } = CONFIG;
 	return (
 		<nav className={`${styles.navbar} ${className}`} style={style}>
 			<PageContainer className={`${styles.navbar_container}`}>
@@ -34,17 +33,16 @@ const Navbar: FC<NavbarProps> = (props) => {
 					</Link>
 				</div>
 				<ul className={`${styles.navbar_links}`}>
-					{config
-						.filter((item) => item.isPublic === true || (item.isPublic === false && status === "authenticated"))
-						.map((item) => (
-							<li className={`${styles.navbar_link}`} key={item.label}>
-								<NavbarLinkItem {...item} />
-							</li>
-						))}
+					{ROUTES.filter(
+						(item) => item.isPublic === true || (item.isPublic === false && status === "authenticated"),
+					).map((item) => (
+						<li className={`${styles.navbar_link}`} key={item.label}>
+							<NavbarLinkItem {...item} />
+						</li>
+					))}
 					{status === "authenticated" ? (
 						<li>
 							<Button
-								// style={{ background: "#d91e18" }}
 								btnStyle="outline"
 								label="Logout"
 								onClick={async () => await signOut({ callbackUrl: "/", redirect: false })}
