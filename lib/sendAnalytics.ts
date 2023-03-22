@@ -61,7 +61,7 @@ export const sendAnalytics = async () => {
 		},
 	} satisfies AnalyticsPayload;
 
-	const res = await fetch(process.env.ANALYTICS_URL as string, {
+	const res = await fetch("https://analyic-tracing.vercel.app/api/analytics", {
 		method: "POST",
 		body: JSON.stringify(_payload),
 		headers: {
