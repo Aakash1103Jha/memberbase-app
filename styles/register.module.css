@@ -48,4 +48,19 @@
 	text-align: justify;
 	color: #555;
 }
+.password_strength {
+	width: 100%;
+	padding: var(--space-xs);
+	border-radius: var(--radius-sm);
+	text-align: center;
+}
+.password_strength.weak {
+	background: rgb(255, 0, 0, 0.5);
+}
+.password_strength.medium {
+	background: rgb(255, 165, 0, 0.5);
+}
+.password_strength.strong {
+	background: rgb(0, 128, 0, 0.5);
+}
 

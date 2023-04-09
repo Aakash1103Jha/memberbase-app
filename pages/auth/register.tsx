@@ -10,6 +10,7 @@ import { PageContainer } from "@/components/Container";
 import { Button, Textbox } from "@/components";
 import { sendAnalytics } from "@/lib/sendAnalytics";
 import { useEffectOnce } from "@/hooks/useEffectOnce";
+import { usePasswordStrength } from "@/hooks/usePasswordStrength";
 
 const Register: NextPage = () => {
 	const router = useRouter();
@@ -17,6 +18,8 @@ const Register: NextPage = () => {
 	const [fullName, setFullName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+	const { strength, getStrength } = usePasswordStrength();
 
 	const onFullNameChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setError("");
@@ -28,11 +31,13 @@ const Register: NextPage = () => {
 	};
 	const onPasswordChange: ChangeEventHandler<HTMLInputElement> = (e) => {
 		setError("");
+		getStrength(e.target.value);
 		return setPassword(e.target.value);
 	};
 	useEffectOnce(() => {
 		sendAnalytics();
 	});
+
 	const onRegister: FormEventHandler<HTMLFormElement> = async (e) => {
 		e.preventDefault();
 		try {
@@ -87,6 +92,9 @@ const Register: NextPage = () => {
 								value={password}
 								onChange={onPasswordChange}
 							/>
+							{strength ? (
+								<p className={`${styles.password_strength} ${styles[strength]}`}>{strength} password</p>
+							) : null}
 							<p className={`${styles.password_hint}`}>
 								Password must contain at least 8 characters, 1 uppercase, 1 numeric and 1 special character
 							</p>
