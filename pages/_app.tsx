@@ -9,8 +9,9 @@ import { useEffectOnce } from "@/hooks/useEffectOnce";
 import { useState } from "react";
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
-	const [showAnnouncement, setShowAnnouncement] = useState(true);
+	const [showAnnouncement, setShowAnnouncement] = useState(eval(process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT as string));
 	useEffectOnce(() => {
+		if (eval(process.env.NEXT_PUBLIC_SHOW_ANNOUNCEMENT as string)) return;
 		const _time = setTimeout(() => {
 			return setShowAnnouncement(false);
 		}, 3000);

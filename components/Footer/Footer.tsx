@@ -44,6 +44,10 @@ const FOOTER_CONFIG = [
 				label: "Register",
 				url: "/auth/register",
 			},
+			{
+				label: "Contribute",
+				url: "/contribute",
+			},
 		],
 	},
 	// {

@@ -1,13 +1,23 @@
-.textbox_container {
+.textbox_container,
+.textarea_container {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-sm);
 	width: 100%;
 }
-.textbox {
-	padding: var(--space-sm) var(--space-md);
-	border-radius: var(--radius-md);
+.textbox,
+.textarea {
+	border-radius: var(--radius-sm);
 	border: none;
 	border: 1px solid var(--coal);
+}
+.textbox {
+	padding: var(--space-sm) var(--space-md);
+}
+.textarea {
+	padding: var(--space-md);
+	resize: none;
+	height: 10rem;
+	max-height: 20rem;
 }
 

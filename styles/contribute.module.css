@@ -1,0 +1,32 @@
+.contribute_page > section {
+	display: flex;
+	gap: var(--space-md);
+}
+.contribute_page > section > div {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+	flex: 1;
+}
+.contribute_form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+	max-width: 30rem;
+	width: 100%;
+	/* margin: 0rem auto; */
+}
+.contribute_bg_container {
+	flex: 1.5;
+	background: url("../assets/svg/boy-sitting-on-chair-and-reaidng-book.svg");
+	background-repeat: none;
+	-webkit-background-repeat: none;
+	background-size: 100% 100%;
+}
+
+@media screen and (max-width: 900px) {
+	.contribute_bg_container {
+		display: none;
+	}
+}
+
